@@ -25,15 +25,35 @@
     <Filter Include="Source\Core">
       <UniqueIdentifier>{b01bc8bb-cc17-430e-a3dd-e7a0345400fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Lang_Constructs">
+      <UniqueIdentifier>{77dbe7fe-34de-4a84-b16c-195791220c43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Variables.cpp">
+      <Filter>Source\Lang_Constructs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Functions.cpp">
+      <Filter>Source\Lang_Constructs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Control_Flow.cpp">
+      <Filter>Source\Lang_Constructs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pointers.cpp">
+      <Filter>Source\Lang_Constructs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
+    <ClInclude Include="src\pch.h">
       <Filter>Source</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Settings.txt">
+      <Filter>Source</Filter>
+    </Text>
   </ItemGroup>
 </Project>

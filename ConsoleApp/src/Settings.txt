@@ -1,0 +1,5 @@
+1. set C++ lang version, error level & treatWarningsAsErrors
+2. Don't have solution an project name identical
+3. Project Properties -> All Configurations & All Platforms
+	-> Output directory: "$(SolutionDir)bin\$(Platform)\$(Configuration)\"
+	-> Intermediate directory: "$(SolutionDir)bin\Intermediates\$(Platform)\$(Configuration)\"
