@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Classes.cpp" />
     <ClCompile Include="src\Control_Flow.cpp" />
     <ClCompile Include="src\Pointers.cpp" />
     <ClCompile Include="src\Functions.cpp" />
