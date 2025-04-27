@@ -1,6 +1,12 @@
 namespace LANG_CONSTRUCTS
 {
 	#pragma region PRIMITIVE_TYPES
+	/*
+	*	By default C++ doesn't initialize variables like Java or C# does.
+	*	This means you get whatever is left over inside of that memory.
+	*	Most of the time this is undefined behavior / utter garbage.
+	*/
+	
 	// Primitive types
 	// The only difference is the size / memory the variables occupy
 	char a; short b; int c; long d; long long e;

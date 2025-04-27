@@ -110,19 +110,37 @@ namespace LANG_CONSTRUCTS
 	void IncrementByPtr(int* value) { (*value)++; }
 	void IncrementByRef(int& value) { value++; }
 	#pragma endregion
-
-	/*
-	🔁 Optional Additions (only if you want to go deeper later):
-		Pointer arithmetic (e.g., ptr + 1)
-
-		const pointers and pointer to const
-
-		Function pointers
-
-		Smart pointers (std::unique_ptr, shared_ptr) — not raw, but a critical modern alternative
-
-		Dangling pointers / memory leaks / undefined behavior
-
-		Reference collapsing (in templates) if you go into advanced topics
-	*/
 }
+
+#pragma region ARROW_OPERATOR
+class PlayerArr {
+public:
+	void PrintName()
+	{
+		std::cout << "Player" << std::endl;
+	}
+};
+#pragma endregion
+
+void TestArrOperator()
+{
+	PlayerArr* p = new PlayerArr(); // Remember the new keyword returns a pointer
+	// If you use new, you must use delete or you create memory leaks.
+	p->PrintName(); // Instead of p.PrintName();
+	delete p; // Memory cleanup
+}
+
+/*
+🔁 Optional Additions (only if you want to go deeper later):
+	Pointer arithmetic (e.g., ptr + 1)
+
+	const pointers and pointer to const
+
+	Function pointers
+
+	Smart pointers (std::unique_ptr, shared_ptr) — not raw, but a critical modern alternative
+
+	Dangling pointers / memory leaks / undefined behavior
+
+	Reference collapsing (in templates) if you go into advanced topics
+*/
