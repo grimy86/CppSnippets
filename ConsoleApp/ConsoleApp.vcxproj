@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Arrays.cpp" />
     <ClCompile Include="src\Inheritance.cpp" />
     <ClCompile Include="src\EnumSample.cpp" />
     <ClCompile Include="src\Log.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="src\TEMPLATE.cpp" />
     <ClCompile Include="src\Enums.cpp" />
     <ClCompile Include="src\Variables.cpp" />
+    <ClCompile Include="src\Strings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h" />

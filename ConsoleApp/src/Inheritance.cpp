@@ -120,3 +120,15 @@ void TestInterfaces_PureVirtualFunctions()
 	Print(pvf);
 }
 #pragma endregion
+
+/*
+*	Visibility is purely a language concept tied to OOP that helps you organize code.
+*	It does not have any effect on performance.
+* 
+*	Remember that "friend" classes are exceptions to this rule.
+*	
+*	In C++ we have:
+*		Private: default for classes, accessible only within or to friend classes
+*		Public: default for structs, accessible to all
+*		Protected: the class and all subclasses can access the symbols (not instances)
+*/
