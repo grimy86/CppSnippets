@@ -37,7 +37,6 @@ namespace LANG_CONSTRUCTS
 	*		u8""s, L""s, u""s, U""s, etc.
 	* 
 	*		ignore escape characters = R"" - (RAW string)
-	*	
 	*/
 #pragma endregion
 }
