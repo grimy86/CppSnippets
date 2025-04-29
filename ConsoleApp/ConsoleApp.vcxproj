@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Arrays.cpp" />
+    <ClCompile Include="src\Const.cpp" />
     <ClCompile Include="src\Inheritance.cpp" />
     <ClCompile Include="src\EnumSample.cpp" />
     <ClCompile Include="src\Log.cpp" />
