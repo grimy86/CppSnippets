@@ -106,3 +106,37 @@
 		e.Print();
 	}
 
+#pragma region InitializationStandards
+/*
+class Example {
+	int x;             // uninitialized
+	std::string name;  // default-constructed to ""
+public:
+	Example() {}
+};
+//OR
+class Example {
+	int x { 0 };
+	std::string name { "" };
+	Example() {}
+};
+//OR
+class Example {
+	int x;
+	std::string name;
+public:
+	Example() : x(0), name(""){}
+};
+//OR
+class Example {
+	int x { 0 };
+	std::string name { "" };
+public:
+	Example () = default; // uses the in-class default initializers
+	Example (int num, std::string someName) : x(num), name (someName) {} // overrides them
+};
+
+Just remember for constructors:
+use the initializer list to initialize members, use the body to assign to already default constructed members
+*/
+#pragma endregion
