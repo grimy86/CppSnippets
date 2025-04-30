@@ -25,5 +25,27 @@ namespace LANG_CONSTRUCTS
 	// Pointers
 	bool* _boolPointer;
 	// bool& _boolReference;
+
+	// Example type
+	class Entity
+	{
+
+	};
+
+	void HeapFunc()
+	{
+		// Heap allocated objects
+		Entity* e = new Entity(); // == Entity* e = (Entity*)malloc(sizeof(Entity));
+		delete e; // == free(e); known as scalar delete
+
+		// Arrays are a bit different however
+		int* b = new int[50]; // 200 bytes
+		delete[] b;
+
+		// Placement new, decide where memory comes from
+		Entity* o = new(b) Entity();
+
+	} // e won't actually be freed here because it's a heap object
+
 	#pragma endregion
 }

@@ -147,6 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Operator_Overloading.cpp" />
+    <ClCompile Include="src\Conversion.cpp" />
     <ClCompile Include="src\Arrays.cpp" />
     <ClCompile Include="src\Const.cpp" />
     <ClCompile Include="src\Inheritance.cpp" />

@@ -63,6 +63,7 @@ namespace LANG_CONSTRUCTS
 
         // Ternary operator
         int result = (value > 10) ? 1 : 0;
+        int result2 = (value > 10) ? (value < 10) ? 1 : 0 : 1; // Chaining is also possible
     }
 	#pragma endregion
 	#pragma region LOOPS
