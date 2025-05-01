@@ -93,7 +93,6 @@
 			// Constructor body (optional)
 		}
 	};
-#pragma endregion
 
 	void TestClasses()
 	{
@@ -105,6 +104,59 @@
 		EntityTest e;
 		e.Print();
 	}
+#pragma endregion
+
+namespace COPYING
+{
+	#pragma region COPYING
+	struct Vec2
+	{
+		float x, y;
+	};
+
+	void Copying()
+	{
+		// Both vectors have seperate memory addresses
+		// All we did was copy the value at &a into b
+		Vec2 a{ 2, 3 };
+		Vec2 b{a};
+
+		Vec2* aPtr{ new Vec2() };
+		Vec2* bPtr{ aPtr };
+		bPtr->x = 5; // This affects both pointers
+
+	}
+
+	class String
+	{
+	private:
+		char* m_Buffer;
+		unsigned int m_Size;
+	public:
+		String(const char* string)
+		{
+			m_Size = strlen(string);
+			m_Buffer = new char[m_Size + 1];
+			memcpy(m_Buffer, string, m_Size);
+			m_Buffer[m_Size] = 0;
+		}
+
+		~String()
+		{
+			delete[] m_Buffer;
+		}
+
+		friend std::ostream& operator<<(std::ostream& stream, const String& string);
+	};
+
+	std::ostream& operator<<(std::ostream& stream, const String& string)
+	{
+		stream << string.m_Buffer;
+		return stream;
+	}
+	#pragma endregion
+}
+
 
 #pragma region InitializationStandards
 /*
