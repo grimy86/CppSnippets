@@ -113,14 +113,26 @@ namespace LANG_CONSTRUCTS
 }
 
 #pragma region ARROW_OPERATOR
+void PrintPlayer(const PlayerArr& p);
+
 class PlayerArr {
+private:
+	int age;
 public:
 	void PrintName()
 	{
 		std::cout << "Player" << std::endl;
+		this->age = 5; // the "this" keyword is a pointer to the current object instance.
+		PlayerArr* const p = this;
+
+		PrintPlayer(*this);
 	}
 };
-#pragma endregion
+
+void PrintPlayer(const PlayerArr& p)
+{
+	//Code
+}
 
 void TestArrOperator()
 {
@@ -129,18 +141,38 @@ void TestArrOperator()
 	p->PrintName(); // Instead of p.PrintName();
 	delete p; // Memory cleanup
 }
+#pragma endregion
 
-/*
-🔁 Optional Additions (only if you want to go deeper later):
-	Pointer arithmetic (e.g., ptr + 1)
+#pragma region SMART_POINTERS
+namespace SMART_PTRS
+{
+	/*
+	#include <memory>
 
-	const pointers and pointer to const
+	Smartpointers enable someone to actually never call new or delete.
+	1. Unique_ptr is a scoped ptr, it will call delete when it goes out of scope.
+	You also cannot copy a unique pointer, copy constructor is deleted.
 
-	Function pointers
+	2. Shared_ptr is a reference counting ptr, it keeps track of the amount of references active to that pointer.
+	As soon as the count reaches 0, the pointer gets deleted.
 
-	Smart pointers (std::unique_ptr, shared_ptr) — not raw, but a critical modern alternative
+	3. Weak_ptr is a sharedptr that doesn't increase the ref count.
+	*/
 
-	Dangling pointers / memory leaks / undefined behavior
+	class Entity
+	{
+	public:
+		Entity() { std::cout << "SMART_PTRS: Created entity!" << std::endl; }
+		~Entity(){ std::cout << "SMART_PTRS: Destroyed entity!" << std::endl; }
 
-	Reference collapsing (in templates) if you go into advanced topics
-*/
+		void Print() {}
+	};
+
+	void TestSmartPtrs()
+	{
+		std::unique_ptr<Entity> entity = std::make_unique<Entity>();
+		std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
+		entity->Print();
+	}
+}
+#pragma endregion

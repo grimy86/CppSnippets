@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ScopedPtr.cpp" />
     <ClCompile Include="src\Operator_Overloading.cpp" />
     <ClCompile Include="src\Conversion.cpp" />
     <ClCompile Include="src\Arrays.cpp" />
