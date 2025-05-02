@@ -125,10 +125,19 @@ namespace COPYING
 		Vec2* bPtr{ aPtr };
 		bPtr->x = 5; // This affects both pointers
 
+		// While on the topic of copying, passing an object to a function makes a copy
+		// Therefor usually pass by reference
 	}
 
 	class String
 	{
+		/*
+			Your class does not define a copy constructor or copy assignment operator, so C++ uses the default implementations.
+			These perform a shallow copy, meaning both objects end up pointing to the same m_Buffer.
+
+			The solution is to deep copy by providing a copy constructor!
+		*/
+
 	private:
 		char* m_Buffer;
 		unsigned int m_Size;
@@ -141,9 +150,28 @@ namespace COPYING
 			m_Buffer[m_Size] = 0;
 		}
 
+		/* C++ default shallow copy constructor
+			String(const String& other)
+			{
+				memcpy(this, &other, sizeof(String));
+			}
+		*/
+		
+		String(const String& other)
+			:m_Size(other.m_Size)
+		{
+			m_Buffer = new char[m_Size + 1];
+			memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
+		}
+
 		~String()
 		{
 			delete[] m_Buffer;
+		}
+
+		char& operator[](unsigned int index)
+		{
+			return m_Buffer[index];
 		}
 
 		friend std::ostream& operator<<(std::ostream& stream, const String& string);
@@ -190,5 +218,13 @@ public:
 
 Just remember for constructors:
 use the initializer list to initialize members, use the body to assign to already default constructed members
+
+MORE STYLE TIPS:
+| Type of Data                                                             | How to Pass                             | Why                                            |
+| ------------------------------------------------------------------------ | --------------------------------------- | ---------------------------------------------- |
+| **Small types (ints, floats, chars, bools, enums)**                      | By **value**                            | Copying is faster and simpler; avoids aliasing |
+| **Large types (std::string, std::vector, user-defined structs/classes)** | By **const reference**                  | Avoids expensive copies                        |
+| **Objects that need to be modified**                                     | By **non-const reference**              | So the function can change the original        |
+| **Ownership transfer needed**                                            | By **value or rvalue reference (`&&`)** | Enables move semantics                         |
 */
 #pragma endregion
