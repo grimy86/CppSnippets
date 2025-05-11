@@ -76,8 +76,14 @@
     <ClCompile Include="src\Operator_Overloading.cpp">
       <Filter>Source\LANG_CONSTRUCTS</Filter>
     </ClCompile>
-    <ClCompile Include="ScopedPtr.cpp">
+    <ClCompile Include="src\ScopedPtr.cpp">
       <Filter>Source\SAMPLES</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Template_Functions.cpp">
+      <Filter>Source\LANG_CONSTRUCTS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\l&amp;rvalues.cpp">
+      <Filter>Source\LANG_CONSTRUCTS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

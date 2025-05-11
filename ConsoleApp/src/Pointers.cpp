@@ -138,7 +138,7 @@ void TestArrOperator()
 {
 	PlayerArr* p = new PlayerArr(); // Remember the new keyword returns a pointer
 	// If you use new, you must use delete or you create memory leaks.
-	p->PrintName(); // Instead of p.PrintName();
+	p->PrintName(); // == (*p).PrintName();
 	delete p; // Memory cleanup
 }
 #pragma endregion
@@ -174,5 +174,34 @@ namespace SMART_PTRS
 		std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
 		entity->Print();
 	}
+}
+#pragma endregion
+
+#pragma region FUNCTIONS_POINTERS
+namespace functionPtrs
+{
+	void Foo() { return; }
+
+	class example
+	{
+		/*
+			1. Pass a function as an argument to another function (e.g., custom sorting or callbacks).
+			2. Store functions in variables, arrays, or structures.
+			3. Implement behavior switching at runtime (like function dispatch tables or plug-in systems).
+			4. Replace switch statements or complex if chains with cleaner, more flexible code.
+		*/
+		void Doo() { return; }
+		void Goo()
+		{
+			// Declare a function pointer
+			void (*funcPtr)() = &Foo;
+
+			// Method pointer
+			void (example::*funcPtr)() = &Doo;
+
+			// Call the function through the pointer
+			funcPtr();  // or (*funcPtr)();
+		}
+	};
 }
 #pragma endregion
