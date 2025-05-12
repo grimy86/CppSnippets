@@ -163,7 +163,6 @@
     <ClCompile Include="src\Functions.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Static.cpp" />
-    <ClCompile Include="src\TEMPLATE.cpp" />
     <ClCompile Include="src\Enums.cpp" />
     <ClCompile Include="src\Variables.cpp" />
     <ClCompile Include="src\Strings.cpp" />
