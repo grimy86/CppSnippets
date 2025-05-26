@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Multiple_Returns.cpp" />
     <ClCompile Include="src\l&amp;rvalues.cpp" />
     <ClCompile Include="src\ScopedPtr.cpp" />
     <ClCompile Include="src\Operator_Overloading.cpp" />
@@ -162,7 +163,6 @@
     <ClCompile Include="src\Functions.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Static.cpp" />
-    <ClCompile Include="src\TEMPLATE.cpp" />
     <ClCompile Include="src\Enums.cpp" />
     <ClCompile Include="src\Variables.cpp" />
     <ClCompile Include="src\Strings.cpp" />

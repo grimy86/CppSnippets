@@ -49,9 +49,6 @@
     <ClCompile Include="src\Static.cpp">
       <Filter>Source\LANG_CONSTRUCTS</Filter>
     </ClCompile>
-    <ClCompile Include="src\TEMPLATE.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
-    </ClCompile>
     <ClCompile Include="src\Enums.cpp">
       <Filter>Source\LANG_CONSTRUCTS</Filter>
     </ClCompile>
@@ -83,6 +80,9 @@
       <Filter>Source\LANG_CONSTRUCTS</Filter>
     </ClCompile>
     <ClCompile Include="src\l&amp;rvalues.cpp">
+      <Filter>Source\LANG_CONSTRUCTS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Multiple_Returns.cpp">
       <Filter>Source\LANG_CONSTRUCTS</Filter>
     </ClCompile>
   </ItemGroup>
