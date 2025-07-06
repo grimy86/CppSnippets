@@ -16,6 +16,78 @@ int main()
     TestVirtualFunctions();
     TestInterfaces_PureVirtualFunctions();
 
+    std::cout << "=== Pointer Types & Address Arithmetic ===\n\n";
+
+    int value = 1337;
+    std::cout << "Original int value: " << value << "\n";
+    std::cout << "Address of value (&value): " << &value << "\n\n";
+
+    // -------------------------------
+    // 1. void* - Generic Pointer
+    // -------------------------------
+    void* voidPtr = &value;
+    std::cout << "[void*] voidPtr = &value => " << voidPtr << "\n";
+
+    // void* must be cast before use
+    int dereferencedViaVoid = *(int*)voidPtr;
+    std::cout << "[void*] Dereferenced (int*)voidPtr => " << dereferencedViaVoid << "\n\n";
+
+    // -------------------------------
+    // 2. BYTE* - Pointer to 1 byte
+    // -------------------------------
+    BYTE* bytePtr = (BYTE*)&value;
+    std::cout << "[BYTE*] bytePtr = (BYTE*)&value => " << static_cast<void*>(bytePtr) << "\n";
+
+    std::cout << "[BYTE*] Individual bytes of int 1337 (little endian): ";
+    for (int i = 0; i < sizeof(int); i++) {
+        std::cout << std::hex << (int)bytePtr[i] << " ";
+    }
+    std::cout << std::dec << "\n\n";
+
+    // Modify a byte in memory (change least significant byte of 1337 -> 0x39 -> 0x00)
+    bytePtr[0] = 0x00;
+    std::cout << "[BYTE*] After modification, value = " << value << "\n\n";
+
+    // Reset value
+    value = 1337;
+
+    // -------------------------------
+    // 3. uintptr_t - Integer to hold pointer address
+    // -------------------------------
+    uintptr_t addrInt = (uintptr_t)&value;
+    std::cout << "[uintptr_t] Address of value as integer: " << std::hex << addrInt << std::dec << "\n";
+
+    // Address arithmetic: simulate adding offset (like in a JMP instruction)
+    uintptr_t offset = 4;
+    uintptr_t newAddrInt = addrInt + offset;
+    std::cout << "[uintptr_t] newAddrInt = addrInt + 4 => " << std::hex << newAddrInt << std::dec << "\n\n";
+
+    // -------------------------------
+    // 4. uintptr_t -> Pointer (back)
+    // -------------------------------
+    int* intPtrFromInt = (int*)addrInt;
+    std::cout << "[uintptr_t -> int*] Dereferenced: " << *intPtrFromInt << "\n\n";
+
+    // -------------------------------
+    // 5. DWORD* - 4-byte memory patch
+    // -------------------------------
+    DWORD* dwordPtr = (DWORD*)&value;
+    std::cout << "[DWORD*] dwordPtr = (DWORD*)&value => " << dwordPtr << "\n";
+    std::cout << "[DWORD*] *dwordPtr (should match value): " << *dwordPtr << "\n";
+
+    // Change value via DWORD*
+    *dwordPtr = 0xDEADBEEF;
+    std::cout << "[DWORD*] After writing 0xDEADBEEF, value = " << std::hex << value << std::dec << "\n\n";
+
+    // -------------------------------
+    // 6. uintptr_t* - Rarely used
+    // -------------------------------
+    uintptr_t addrHolder = (uintptr_t)&value;
+    uintptr_t* ptrToIntAddress = &addrHolder;
+    std::cout << "[uintptr_t*] Points to variable holding an address: " << std::hex << *ptrToIntAddress << std::dec << "\n";
+
+    std::cout << "\n=== End ===\n";
+
     return 0;
 }
 

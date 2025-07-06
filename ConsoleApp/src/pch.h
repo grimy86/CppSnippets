@@ -19,5 +19,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <Windows.h>
+#include <Windows.h> // For BYTE, DWORD
 #include <memory>
+#include <cstdint>  // For uintptr_t
