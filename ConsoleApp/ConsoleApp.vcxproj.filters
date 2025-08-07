@@ -5,23 +5,11 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source\Utilities">
-      <UniqueIdentifier>{a897565f-9948-4748-a972-7a175bea7278}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Services">
-      <UniqueIdentifier>{cbdba7e7-6741-45b0-8cc5-1358d55b27b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\DAL">
-      <UniqueIdentifier>{812f93b8-60aa-4c06-b4ff-80a186789430}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\Core">
-      <UniqueIdentifier>{b01bc8bb-cc17-430e-a3dd-e7a0345400fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\SAMPLES">
-      <UniqueIdentifier>{fa3c3804-e1f1-4304-9cf7-f8d9b5a62bda}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source\LANG_CONSTRUCTS">
+    <Filter Include="Source\LanguageConstructs">
       <UniqueIdentifier>{77dbe7fe-34de-4a84-b16c-195791220c43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Samples">
+      <UniqueIdentifier>{fa3c3804-e1f1-4304-9cf7-f8d9b5a62bda}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,61 +17,61 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="src\Variables.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Functions.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Control_Flow.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Pointers.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Classes_Structs.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Log.cpp">
-      <Filter>Source\SAMPLES</Filter>
+      <Filter>Source\Samples</Filter>
     </ClCompile>
     <ClCompile Include="src\Static.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Enums.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\EnumSample.cpp">
-      <Filter>Source\SAMPLES</Filter>
+      <Filter>Source\Samples</Filter>
     </ClCompile>
     <ClCompile Include="src\Inheritance.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Arrays.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Strings.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Const.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Conversion.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Operator_Overloading.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\ScopedPtr.cpp">
-      <Filter>Source\SAMPLES</Filter>
+      <Filter>Source\Samples</Filter>
     </ClCompile>
     <ClCompile Include="src\Template_Functions.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\l&amp;rvalues.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
     <ClCompile Include="src\Multiple_Returns.cpp">
-      <Filter>Source\LANG_CONSTRUCTS</Filter>
+      <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

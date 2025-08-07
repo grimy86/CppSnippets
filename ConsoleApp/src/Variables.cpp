@@ -1,3 +1,5 @@
+#include <new>
+
 namespace LANG_CONSTRUCTS
 {
 	#pragma region PRIMITIVE_TYPES
@@ -43,7 +45,8 @@ namespace LANG_CONSTRUCTS
 		delete[] b;
 
 		// Placement new, decide where memory comes from
-		Entity* o = new(b) Entity();
+		char buffer[sizeof(Entity)];
+		Entity* o = new(buffer) Entity();
 
 	} // e won't actually be freed here because it's a heap object
 

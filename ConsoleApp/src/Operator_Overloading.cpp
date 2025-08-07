@@ -44,6 +44,7 @@ namespace OPERATOR_OVERLOADING
 	std::ostream& operator<<(std::ostream& stream, const Vector2& other)
 	{
 		stream << other.x << ", " << other.y;
+		return stream;
 	}
 
 	void Foo()

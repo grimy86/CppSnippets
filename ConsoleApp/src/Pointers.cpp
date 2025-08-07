@@ -113,26 +113,26 @@ namespace LANG_CONSTRUCTS
 }
 
 #pragma region ARROW_OPERATOR
-void PrintPlayer(const PlayerArr& p);
-
 class PlayerArr {
 private:
 	int age;
 public:
+	void PrintPlayer(const PlayerArr& p)
+	{
+		//Code
+	}
+
 	void PrintName()
 	{
 		std::cout << "Player" << std::endl;
-		this->age = 5; // the "this" keyword is a pointer to the current object instance.
+		//this->age = 5; // the "this" keyword is a pointer to the current object instance.
 		PlayerArr* const p = this;
 
 		PrintPlayer(*this);
 	}
 };
 
-void PrintPlayer(const PlayerArr& p)
-{
-	//Code
-}
+
 
 void TestArrOperator()
 {
@@ -178,30 +178,42 @@ namespace SMART_PTRS
 #pragma endregion
 
 #pragma region FUNCTIONS_POINTERS
-namespace functionPtrs
-{
-	void Foo() { return; }
-
-	class example
-	{
 		/*
 			1. Pass a function as an argument to another function (e.g., custom sorting or callbacks).
 			2. Store functions in variables, arrays, or structures.
 			3. Implement behavior switching at runtime (like function dispatch tables or plug-in systems).
 			4. Replace switch statements or complex if chains with cleaner, more flexible code.
 		*/
-		void Doo() { return; }
-		void Goo()
-		{
-			// Declare a function pointer
-			void (*funcPtr)() = &Foo;
 
-			// Method pointer
-			void (example::*funcPtr)() = &Doo;
+namespace functionPtrs
+{
+	void Foo() { return; }
+	void (*freeFuncPtr)() = &Foo;
 
-			// Call the function through the pointer
-			funcPtr();  // or (*funcPtr)();
+	class example
+	{
+	public:
+		void Goo() {
+			std::cout << "Goo called\n";
+		}
+
+		void (example::* memberPtr)(); // declare, initialize in constructor
+
+		example() {
+			memberPtr = &example::Goo;
+		}
+
+		void call() {
+			(this->*memberPtr)(); // call the member function through pointer
 		}
 	};
+
+	void Test()
+	{
+		freeFuncPtr(); // call the free function
+
+		example e;
+		e.call(); // call the member function using memberPtr
+	}
 }
 #pragma endregion
