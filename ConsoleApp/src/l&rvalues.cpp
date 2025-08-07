@@ -1,4 +1,4 @@
-namespace lValues_and_rValues
+namespace LvaluesAndRvalues
 {
 	class Example
 	{

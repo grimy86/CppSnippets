@@ -1,8 +1,7 @@
 #include "pch.h"
 
-namespace CONVERSION
+namespace Conversion
 {
-#pragma region CONVERSION
 	class Entity
 	{
 	private:
@@ -33,5 +32,4 @@ namespace CONVERSION
 		PrintEntity(Entity("Grimy"));
 		PrintEntity(22);
 	}
-#pragma endregion
 }

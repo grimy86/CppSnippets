@@ -1,8 +1,7 @@
 #include "pch.h"
 
-namespace LANG_CONSTRUCTS
+namespace Strings
 {
-#pragma region STRINGS
 	/*
 	*	A string is an array of characters and as we know an array is just pointer.
 	*	So a char* is a pointer to a character (e.g. the first char in a string..).
@@ -38,5 +37,4 @@ namespace LANG_CONSTRUCTS
 	* 
 	*		ignore escape characters = R"" - (RAW string)
 	*/
-#pragma endregion
 }

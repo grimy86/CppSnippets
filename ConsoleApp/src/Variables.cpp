@@ -1,8 +1,7 @@
 #include <new>
 
-namespace LANG_CONSTRUCTS
+namespace Variables
 {
-	#pragma region PRIMITIVE_TYPES
 	/*
 	*	By default C++ doesn't initialize variables like Java or C# does.
 	*	This means you get whatever is left over inside of that memory.
@@ -45,10 +44,9 @@ namespace LANG_CONSTRUCTS
 		delete[] b;
 
 		// Placement new, decide where memory comes from
+		// Must include <new> for placement new
 		char buffer[sizeof(Entity)];
 		Entity* o = new(buffer) Entity();
 
 	} // e won't actually be freed here because it's a heap object
-
-	#pragma endregion
 }

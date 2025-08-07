@@ -1,8 +1,7 @@
 #include "pch.h"
 
-namespace OPERATOR_OVERLOADING
+namespace OperatorOverloading
 {
-#pragma region OPERATOR_OVERLOADING
 	struct Vector2
 	{
 		float x, y;
@@ -55,5 +54,4 @@ namespace OPERATOR_OVERLOADING
 
 		std::cout << result << std::endl;
 	}
-#pragma endregion
 }

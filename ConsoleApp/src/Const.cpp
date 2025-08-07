@@ -1,8 +1,7 @@
 #include "pch.h"
 
-namespace CONSTSPACE
+namespace Const
 {
-#pragma region CONSTANTS
 	/*
 	*	They keyword const marks an object as immutable.
 	*	It's a promise to the compiler that the data is readonly.
@@ -59,5 +58,4 @@ namespace CONSTSPACE
 		mutable int m_value{ 5 }; // mutable allows modification in const methods
 		int* m_x, *m_y;
 	};
-#pragma endregion
 }

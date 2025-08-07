@@ -1,4 +1,4 @@
-namespace multipleReturns
+namespace MultipleReturns
 {
 	/*
 		1. Return a struct

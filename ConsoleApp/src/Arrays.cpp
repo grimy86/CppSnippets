@@ -1,8 +1,7 @@
 ﻿#include "pch.h"
 
-namespace LANG_CONSTRUCTS
+namespace Arrays
 {
-#pragma region ARRAYS
 	/*
 	* An array in C++ is a contiguous block of memory.
 	* When you declare an array like `int example[5];`, the compiler allocates space for 5 integers on the stack.
@@ -10,7 +9,6 @@ namespace LANG_CONSTRUCTS
 	* You can access elements in the array using the indexer `[]`, which translates to pointer arithmetic.
 	* For example, `example[0]` is equivalent to `*(example + 0)`, and `example[4]` is equivalent to `*(example + 4)`.
 	*/
-
 	void Arrays()
 	{
 		int example[5];
@@ -24,5 +22,4 @@ namespace LANG_CONSTRUCTS
 		int* anotherArray = new int[5];
 		delete[] anotherArray;
 	}
-#pragma endregion
 }

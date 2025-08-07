@@ -1,9 +1,10 @@
 ﻿#include "pch.h"
 
-namespace LANG_CONSTRUCTS
+namespace Pointers
 {
-	#pragma region RAW_POINTERS
-	/*
+	/* RAW_POINTERS
+	* 
+	* 
 		*	Win32 Memory Map Overview:
 		*	- Program Image
 		*		- .TEXT section:
@@ -80,13 +81,10 @@ namespace LANG_CONSTRUCTS
 		char* buffer2{ new char[4] };
 		char** ptrToBuffer2{ &buffer2 }; // Pointer to a pointer
 	}
-	#pragma endregion
 
-	#pragma region REFERENCES
-	/*
+	/* REFERENCES
 		*	A reference is an object / variable that doesn't typically occupy memory since it's simply a reference to another address.
 	*/
-
 	void IncrementByPtr(int* value);
 	void IncrementByRef(int& value);
 
@@ -109,43 +107,36 @@ namespace LANG_CONSTRUCTS
 
 	void IncrementByPtr(int* value) { (*value)++; }
 	void IncrementByRef(int& value) { value++; }
-	#pragma endregion
-}
 
-#pragma region ARROW_OPERATOR
-class PlayerArr {
-private:
-	int age;
-public:
-	void PrintPlayer(const PlayerArr& p)
+	// ARROW_OPERATOR
+	class PlayerArr {
+	private:
+		int age;
+	public:
+		void PrintPlayer(const PlayerArr& p)
+		{
+			//Code
+		}
+
+		void PrintName()
+		{
+			std::cout << "Player" << std::endl;
+			//this->age = 5; // the "this" keyword is a pointer to the current object instance.
+			PlayerArr* const p = this;
+
+			PrintPlayer(*this);
+		}
+	};
+
+	void TestArrOperator()
 	{
-		//Code
+		PlayerArr* p = new PlayerArr(); // Remember the new keyword returns a pointer
+		// If you use new, you must use delete or you create memory leaks.
+		p->PrintName(); // == (*p).PrintName();
+		delete p; // Memory cleanup
 	}
 
-	void PrintName()
-	{
-		std::cout << "Player" << std::endl;
-		//this->age = 5; // the "this" keyword is a pointer to the current object instance.
-		PlayerArr* const p = this;
-
-		PrintPlayer(*this);
-	}
-};
-
-
-
-void TestArrOperator()
-{
-	PlayerArr* p = new PlayerArr(); // Remember the new keyword returns a pointer
-	// If you use new, you must use delete or you create memory leaks.
-	p->PrintName(); // == (*p).PrintName();
-	delete p; // Memory cleanup
-}
-#pragma endregion
-
-#pragma region SMART_POINTERS
-namespace SMART_PTRS
-{
+	// SMART_POINTERS
 	/*
 	#include <memory>
 
@@ -174,10 +165,8 @@ namespace SMART_PTRS
 		std::shared_ptr<Entity> sharedEntity = std::make_shared<Entity>();
 		entity->Print();
 	}
-}
-#pragma endregion
 
-#pragma region FUNCTIONS_POINTERS
+	// FUNCTIONS_POINTERS
 		/*
 			1. Pass a function as an argument to another function (e.g., custom sorting or callbacks).
 			2. Store functions in variables, arrays, or structures.
@@ -185,8 +174,6 @@ namespace SMART_PTRS
 			4. Replace switch statements or complex if chains with cleaner, more flexible code.
 		*/
 
-namespace functionPtrs
-{
 	void Foo() { return; }
 	void (*freeFuncPtr)() = &Foo;
 
@@ -216,4 +203,3 @@ namespace functionPtrs
 		e.call(); // call the member function using memberPtr
 	}
 }
-#pragma endregion

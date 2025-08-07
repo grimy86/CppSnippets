@@ -1,20 +1,31 @@
 #include "pch.h" // Our own pre-compiled header-file
-
-void TestClasses();
+namespace Classes
+{
+    void TestClasses();
+}
+namespace Enums
+{
+    void TestEnumClass();
+}
+namespace Pointers
+{
+    void TestArrOperator();
+}
+namespace Inheritance
+{
+    void TestVirtualFunctions();
+    void TestInterfaces_PureVirtualFunctions();
+}
 void TestTerribleLogClass();
-void TestEnumClass();
-void TestArrOperator();
-void TestVirtualFunctions();
-void TestInterfaces_PureVirtualFunctions();
 
 int main()
 {
-    TestClasses();
+    Classes::TestClasses();
+    Enums::TestEnumClass();
+    Pointers::TestArrOperator();
+    Inheritance::TestVirtualFunctions();
+    Inheritance::TestInterfaces_PureVirtualFunctions();
     TestTerribleLogClass();
-    TestEnumClass();
-    TestArrOperator();
-    TestVirtualFunctions();
-    TestInterfaces_PureVirtualFunctions();
 
     std::cout << "=== Pointer Types & Address Arithmetic ===\n\n";
 

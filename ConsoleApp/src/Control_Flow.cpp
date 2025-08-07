@@ -1,6 +1,6 @@
-namespace LANG_CONSTRUCTS
+namespace ControlFlow
 {
-	#pragma region BRANCHES
+    // Branches
     /*
     *   If statement:       executes the block if the condition is true
     *   If-else:            one of the two blocks will run depending on the condition
@@ -65,8 +65,8 @@ namespace LANG_CONSTRUCTS
         int result = (value > 10) ? 1 : 0;
         int result2 = (value > 10) ? (value < 10) ? 1 : 0 : 1; // Chaining is also possible
     }
-	#pragma endregion
-	#pragma region LOOPS
+
+	// LOOPS
     /*
     *   For:        Loops a fixed number of times
     *   While:      Loops while a condition is true
@@ -93,8 +93,8 @@ namespace LANG_CONSTRUCTS
 			Code();
 		} while (condition);
 	}
-	#pragma endregion
-	#pragma region CONTROL_FLOW_STATEMENTS
+
+    // Statements
 	/*
 	 *  continue: Skips the rest of the current loop iteration
 	 *            and jumps straight to the next one.
@@ -134,5 +134,4 @@ namespace LANG_CONSTRUCTS
         // This won't run because of the return above
         Code();
     }
-	#pragma endregion
 }

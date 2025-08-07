@@ -40,9 +40,6 @@
     <ClCompile Include="src\Enums.cpp">
       <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>
-    <ClCompile Include="src\EnumSample.cpp">
-      <Filter>Source\Samples</Filter>
-    </ClCompile>
     <ClCompile Include="src\Inheritance.cpp">
       <Filter>Source\LanguageConstructs</Filter>
     </ClCompile>

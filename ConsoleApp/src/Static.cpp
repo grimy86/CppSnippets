@@ -1,8 +1,7 @@
 ﻿#include "pch.h"
 
-namespace LANG_CONSTRUCTS
+namespace Statics
 {
-#pragma region STATIC
 	/*
 	*	The static keyword has 2 context definitions:
 	*	1. Inside of class or struct:
@@ -20,5 +19,4 @@ namespace LANG_CONSTRUCTS
 	{
 	 
 	}
-#pragma endregion
 }

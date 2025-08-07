@@ -1,8 +1,7 @@
 #include "pch.h"
 
-namespace LANG_CONSTRUCTS
+namespace Functions
 {
-	#pragma region FUNCTIONS
 	/*
 	*	Functions vs. Methods:	Functions inside of a class are (class) methods
 	*/
@@ -15,5 +14,4 @@ namespace LANG_CONSTRUCTS
 	{
 		std::cout << (a * b) << '\n';
 	}
-	#pragma endregion
 }

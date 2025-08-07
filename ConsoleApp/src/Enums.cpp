@@ -1,8 +1,7 @@
 #include "pch.h"
 
-namespace LANG_CONSTRUCTS
+namespace Enums
 {
-#pragma region ENUM
 	/*
 	*	An enum just adds a way of adding text to a integer value
 	*/
@@ -23,5 +22,24 @@ namespace LANG_CONSTRUCTS
 	* The biggest issue is that the integers aren't grouped anymore,
 	*	and when we change the value of our int value it doesn't make sense anymore.
 	*/
-#pragma endregion
+
+	class EnumClass
+	{
+	public:
+		enum Example
+		{
+			A, B, C
+		};
+
+		void TestEnums()
+		{
+			std::cout << "Enum Example::B is equal to: " << Example::B << std::endl;
+		}
+	};
+
+	void TestEnumClass()
+	{
+		EnumClass e;
+		e.TestEnums();
+	}
 }
